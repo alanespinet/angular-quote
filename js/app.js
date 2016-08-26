@@ -1,7 +1,7 @@
 const app = angular.module('QuoteOfTheDay', []);
 
 app.controller('QuoteController', ['$scope', 'quoteService', function($scope, quoteService){
-  quoteService.getQuote().success(res => $scope.quote = res);
+  $scope.handleClick = () => quoteService.getQuote().success(res => $scope.quote = res);;
 }]);
 
 app.factory('quoteService', ['$http', function($http){
